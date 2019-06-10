@@ -2,7 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatExpansionModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatExpansionModule,
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule
+} from '@angular/material';
 
 
 import { AppComponent } from './components/app.component';
@@ -10,6 +17,8 @@ import { PostsCreateComponent } from './posts/posts-create/posts-create.componen
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import {PostService} from './posts/post.service';
+import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,13 +29,16 @@ import {PostService} from './posts/post.service';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
