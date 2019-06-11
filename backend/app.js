@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -12,6 +13,7 @@ mongoose.connect("mongodb+srv://angel:gvgPpGbMyO2yaaWj@mean-course-ipbif.mongodb
 //                                                          //decompres from JSONs
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/images', express.static(path.join('backend/images')));
 
 //                                                          //Set headers for the requests
 app.use((req, res, next) => {
